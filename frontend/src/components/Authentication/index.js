@@ -42,6 +42,7 @@ export default function Authentication  () {
                 body: JSON.stringify({username: username, password: password})
             }).then(res => res.json()).then(data => {
                 setData(data);
+                console.log(data);
                 setLoading(false);
                 if (data.token){ localStorage.setItem(`token`, `${data.token}`) }
             })

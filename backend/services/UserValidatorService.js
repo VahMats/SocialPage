@@ -29,7 +29,6 @@ module.exports = (data, validationType) => {
     isFieldsValid.fieldData.forEach(type => {
         const validationFunction = validationFunctions[type];
         resultData.fields[type] = validationFunction(data)
-        console.log(resultData);
     })
 
     const falseCurrent = Object.keys(resultData.fields).filter(e=>!resultData.fields[e].valid)

@@ -23,6 +23,13 @@ export default function App() {
                         <Route path="/">
                             { localStorage.token ? <Home /> : <Redirect to="/auth"/>  }
                         </Route>
+
+                        <Route path="/user">
+
+                        </Route>
+                        <Route path="/admin">
+
+                        </Route>
                     </Switch>
                 </Router>
             </div>

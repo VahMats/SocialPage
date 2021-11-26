@@ -6,6 +6,7 @@ export default function Registration  () {
 
     const [firstName, setFirstName] = useState("")
     const [lastName, setLastName] = useState("")
+    const [birthday, setBirthday] = useState()
     const [username, setUsername] = useState("")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
@@ -31,7 +32,7 @@ export default function Registration  () {
         else setUsernameColor("yellow")
     }
 
-    function posswordIsConfirmed (confirmPassword){
+    function passwordIsConfirmed (confirmPassword){
         if (confirmPassword === password){
             setConfirmColor("green");
         }
@@ -91,6 +92,12 @@ export default function Registration  () {
                         setLastName(e.target.value)
                 }}
                 />
+                <input type="date"
+                    onChange={e=>{
+                        console.log(typeof e.target.value)
+                        setBirthday(e.target.value);
+                    }}
+                />
                 <input
                     style={{backgroundColor: `${usernameColor}`}}
                     type="text"
@@ -123,7 +130,7 @@ export default function Registration  () {
                     type="password"
                     placeholder="confirm your password"
                     onChange={(e)=>{
-                        posswordIsConfirmed(e.target.value);
+                        passwordIsConfirmed(e.target.value);
                     }}
                 />
                 <button>Register</button>
